@@ -44,7 +44,16 @@ const buyerSchema = z.object({
 })
 
 
+const loginSchema = z.object({
+    email: z.email(),
+    password: z.string().min(8, {
+        error: "Password must be atleast 8 characters long",
+    }).regex(passwordRegex, {
+        error: "Password must include upper, lower, number, and symbol"
+    })
+})
+
 export {
-    sellerSchema, buyerSchema
+    sellerSchema, buyerSchema, loginSchema
 }
 

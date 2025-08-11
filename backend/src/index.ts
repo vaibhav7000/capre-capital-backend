@@ -9,7 +9,6 @@ const app = new Hono<CustomEnv>({
 app.route("", allRoutes);
 
 app.onError(async (error, c) => {
-
   return c.json({
     msg: "Internal server error",
   })

@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { Bindings, Variables } from "../types/types";
-import registerRoute from "./auth/register";
+import registerRouter from "./auth/register";
+import loginRouter from "./auth/login";
 
 const app = new Hono<{
     Bindings: Bindings,
@@ -8,7 +9,9 @@ const app = new Hono<{
 }>({strict: true});
 
 
-app.route("/register", registerRoute);
+app.route("/register", registerRouter);
+
+app.route("/login", loginRouter);
 
 
 export default app;

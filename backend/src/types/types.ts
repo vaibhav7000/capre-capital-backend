@@ -8,6 +8,7 @@ type Bindings = {
     RESEND_API_KEY: string;
     email: string;
     emailKey: string;
+    JWT_SECRET: string;
 }
 
 enum UserRole {
